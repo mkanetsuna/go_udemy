@@ -1,0 +1,20 @@
+{
+    "name": "Golang Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/go:1.19",  // Goのバージョンは必要に応じて変更可能
+    "settings": {
+        "go.toolsManagement.autoUpdate": true
+    },
+    "extensions": [
+        "golang.go",
+        "ms-vscode.go"
+    ],
+    "postCreateCommand": "go mod tidy",
+    "postStartCommand": "go version",
+    "forwardPorts": [8080],
+    "portsAttributes": {
+        "8080": {
+            "label": "Go Server",
+            "onAutoForward": "notify"
+        }
+    }
+}
